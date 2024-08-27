@@ -1,0 +1,84 @@
+{
+    "profil": {
+        "namaLengkap": "Achmad Hasbil Wafi Rahmawan",
+        "nama": "Hasbil",
+        "pendidikan": [
+            {
+                "nama": "Vocational Hight School 4 Malang",
+                "prodi": "Software Engineering",
+                "periodeAwal": 2021,
+                "periodeAkhir": 2024,
+                "periodeBulanAwal": 0,
+                "periodeBulanAkhir": 0
+            },
+            {
+                "nama": "University of Brawijaya",
+                "prodi": "Information System",
+                "periodeAwal": 2024,
+                "periodeAkhir": 2028,
+                "periodeBulanAwal": 8,
+                "periodeBulanAkhir": 8
+            }
+        ],
+        "pengalamanKerja": [
+            {
+                "perusahaan": "PT. Sekawan Media",
+                "position": "Intern Backend Developer",
+                "periodeAwal": 2023,
+                "periodeAkhir": 2024,
+                "periodeBulanAwal": 1,
+                "periodeBulanAkhir": 1
+            }
+        ],
+        "skills": [
+            {
+                "nama": "JavaScript",
+                "icon": null
+            },
+            {
+                "nama": "HTML",
+                "icon": null
+            },
+            {
+                "nama": "CSS",
+                "icon": null
+            },
+            {
+                "nama": "PHP",
+                "icon": null
+            },
+            {
+                "nama": "SQL",
+                "icon": null
+            },
+            {
+                "nama": "NodeJS",
+                "icon": null
+            },
+            {
+                "nama": "React Native",
+                "icon": null
+            },
+            {
+                "nama": "Laravel",
+                "icon": null
+            },
+            {
+                "nama": "ReactJS",
+                "icon": null
+            }
+        ]
+    },
+    "sosialMedia": [
+        {
+            "nama": "github",
+            "link": "https://github.com/rawhx",
+            "icon": "faGithub"
+        },
+        {
+            "nama": "linkedin",
+            "link": "https://www.linkedin.com/in/achmad-hasbil-479623270/",
+            "icon": "faLinkedin"
+        }
+    ]
+}

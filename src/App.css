@@ -1,38 +1,86 @@
-.App {
-  text-align: center;
+.fontPrimary {
+  font-family: 'Patua', sans-serif;
+  font-weight: bolder;
+  color: #658147;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.hamburger {
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.rotate-90 {
+  transform: rotate(90deg);
+  opacity: 0.8; /* Sedikit transparan saat berputar */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.rotate-0 {
+  transform: rotate(0deg);
+  opacity: 1;
+}
+
+.menu-open {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  /* height: fit-content; */
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s ease-in-out, height 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 
-.App-link {
-  color: #61dafb;
+.menu-closed {
+  display: none;
+  opacity: 0;
+  transform: translateY(-20px); /* atau translateY(20px) untuk efek muncul dari bawah */
+  transition: opacity 0.5s ease-in-out, height 0.5s ease-in-out, transform 0.5s ease-in-out;
+  /* transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; */
+  pointer-events: none; /* menghindari klik saat tersembunyi */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+.nav-link {
+  font-weight: 500;
+  color: rgb(184, 184, 184);
+  font-weight: bolder;
+  transition: color 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+  font-weight: 500;
+  color: #778766;
+  font-weight: bolder;
+  transition: color 0.3s ease-in-out;
+}
+
+.nav-link-active {
+  color: #708871;
+  transition: color 0.3s ease-in-out;
+}
+
+.navbar-scrolled {
+  background-color: rgba(255, 255, 255, 0.7); /* Putih transparan */
+  backdrop-filter: blur(10px);
+}
+
+.label-sosmed {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.sosmed {
+  transition: color 0.3s ease-in-out;
+  font-size: 25px;
+  color: #BEC6A0;
+}
+
+.btn-sosmed {
+  transform: translateX(-85%);
+  transition: transform 0.3s ease-in-out;
+  color: #5F6F65;
+}
+
+.btn-sosmed:hover .label-sosmed, 
+.btn-sosmed:hover .sosmed, 
+.btn-sosmed:hover  {
+  opacity: 1;
+  transform: translateX(0);
+  color: #5F6F65;
 }

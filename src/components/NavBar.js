@@ -27,10 +27,10 @@ const NavBar = ({activeSection}) => {
             <div id="navbar" className="px-5 h-min-12 fixed z-40 w-full backdrop-blur flex-none transition-colors duration-500 lg:z-50 lg:border-b lg:border-slate-900/10 dark:border-slate-50/[0.06] supports-backdrop-blur:bg-white/100 dark:bg-transparent">
                 <div className="flex flex-row justify-between items-center py-3">
                     <div>
-                        <span className="flex flex-row items-center gap-2">
-                            <img src="carakter.png" alt="logo" className="rounded h-9"/>
+                        <button onClick={() => window.location.reload()} className="flex flex-row items-center gap-2">
+                            <img src="webportofolio/carakter.png" alt="logo" className="rounded h-9"/>
                             <h6 className="font-bold">RawhWeb</h6>
-                        </span>
+                        </button>
                     </div>
                     <div className="hidden md:flex flex-row gap-5">
                         <button 
@@ -42,7 +42,7 @@ const NavBar = ({activeSection}) => {
                         <button 
                             className={`nav-link ${activeSection === "about" ? 'nav-link-active' : ''}`}
                             onClick={() => scrollToSection('about')}>
-                            About
+                            Journey
                         </button>
 
                         <button 

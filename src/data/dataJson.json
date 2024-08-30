@@ -2,6 +2,7 @@
     "profil": {
         "namaLengkap": "Achmad Hasbil Wafi Rahmawan",
         "nama": "Hasbil",
+        "position": "Software Enginnering",
         "pendidikan": [
             {
                 "nama": "Vocational Hight School 4 Malang",
@@ -79,6 +80,11 @@
             "nama": "linkedin",
             "link": "https://www.linkedin.com/in/achmad-hasbil-479623270/",
             "icon": "faLinkedin"
+        },
+        {
+            "nama": "instagram",
+            "link": "https://instagram.com/achmad.hasbil",
+            "icon": "faInstagram"
         }
     ]
 }

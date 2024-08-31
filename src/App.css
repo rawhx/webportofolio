@@ -1,7 +1,7 @@
 .fontPrimary {
   font-family: 'Patua', sans-serif;
   font-weight: bolder;
-  color: #658147;
+  color: #445D48;
 }
 
 .hamburger {
@@ -45,18 +45,18 @@
 
 .nav-link:hover {
   font-weight: 500;
-  color: #778766;
+  color: #445D48;
   font-weight: bolder;
   transition: color 0.3s ease-in-out;
 }
 
 .nav-link-active {
-  color: #708871;
+  color: #445D48;
   transition: color 0.3s ease-in-out;
 }
 
 .navbar-scrolled {
-  background-color: rgba(255, 255, 255, 0.7); /* Putih transparan */
+  background-color: rgba(255, 255, 255, 0.3); /* Putih transparan */
   backdrop-filter: blur(10px);
 }
 

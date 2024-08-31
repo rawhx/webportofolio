@@ -28,7 +28,7 @@ const NavBar = ({activeSection}) => {
                 <div className="flex flex-row justify-between items-center py-3">
                     <div>
                         <button onClick={() => window.location.reload()} className="flex flex-row items-center gap-2">
-                            <img src="webportofolio/carakter.png" alt="logo" className="rounded h-9"/>
+                            <img src={`${process.env.PUBLIC_URL}/carakter.png`} alt="logo" className="rounded h-9"/>
                             <h6 className="font-bold">RawhWeb</h6>
                         </button>
                     </div>

@@ -3,6 +3,10 @@
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Patua+One&display=swap');
 
+.btn {
+    @apply mt-3 border border-oliveGreen inline-block px-5 py-2 font-semibold text-[#778766] rounded-full hover:bg-oliveGreen hover:text-white transition transform duration-200 ease-in-out ;
+}
+
 @font-face {
     font-family: 'Poppins';
     src: url('/public/fonts/Poppins-Medium.ttf') format('ttf');

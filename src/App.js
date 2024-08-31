@@ -32,8 +32,7 @@ function App() {
   }, []);
 
   return (
-    <div className="App bg-pastel">
-      {/* <div className='blur-overlay' />  */}
+    <div className="App bg-container">
       <NavBar activeSection={activeSection}/>
       <div className='flex flex-col gap-5 trans fixed w-fit left-4 items-center top-[50%] bottom-[50%]'>
         {
@@ -52,45 +51,49 @@ function App() {
       <div className='flex flex-col gap-8'>
         <section id='home' className='h-screen flex items-center justify-center flex-col gap-5'>
           <div className='flex flex-col items-center justify-center'>
-            <p className=' fontPrimary text-lg'>Hi.. <span className="animate-pulse">👋</span>, I'm</p>
+            <p className='fontPrimary text-lg'>Hi.. <span className="animate-pulse">👋</span>, I'm</p>
             <h1 className='fontPrimary text-2xl'>{dataJson.profil.namaLengkap}</h1>
             <h1 className='fontPrimary text-2xl'>{dataJson.profil.position}</h1>
             <button
               type="button"
-              className='mt-3 border border-lime-600 inline-block px-5 py-2 font-semibold text-[#778766] rounded-full hover:bg-lime-600 hover:text-white'
+              className='btn'
               data-twe-ripple-init>
               Download CV
             </button>
           </div>
         </section>
         <section id='about'>
-          <div className='pt-[100px] h-fit bg-[#86AB89] flex flex-col gap-5'>
-            <div className='text-center flex flex-col justify-center items-center gap-3'>
-              <h1 className='fontPrimary text-2xl font-bold'>
-                ~ My Journey ~
-              </h1>
-              <p className='w-[80%]'>Commodo adipisicing ut exercitation eiusmod voluptate occaecat sunt. Officia consequat dolore non incididunt labore Lorem excepteur. Aliqua sunt fugiat quis laboris culpa consequat officia incididunt.</p>
-            </div>
+          <div className='pt-[100px] h-fit bg-whiteFog flex flex-col gap-20'>
             <div className='flex flex-col gap-10'>
-              <h1 className='text-center fontPrimary md:hidden text-xl font-semibold'>About Me</h1>
+              <h1 className='text-center fontPrimary  text-2xl font-semibold' data-aos="fade-down">About Me</h1>
               <div className='flex flex-col md:flex-row justify-center items-center gap-5'>
-                <div className='w-[60%] flex justify-center items-center'>
-                  <div className='animation h-[15rem] w-[15rem] bg-pastel overflow-hidden'>
-                    <img src='webportofolio/me.png' className='object-cover translate-y-[-3rem]'></img>
+                <div className='w-[60%] flex justify-center items-center' data-aos="fade-right">
+                  <div className='animation h-[15rem] w-[15rem] bg-container overflow-hidden'>
+                    <img src={`${process.env.PUBLIC_URL}/me.png`} alt='me' className='object-cover translate-y-[-3rem]'></img>
                   </div>
                 </div>
-                <div className='h-[50vh] w-[80%] pr-[20px] flex flex-col md:justify-center gap-3'>
-                  <h1 className='text-center fontPrimary hidden md:flex text-xl font-semibold'>About Me</h1>
+                <div className='w-[80%] pr-[20px] flex flex-col md:justify-center gap-3'>
                   <div>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque eaque odio incidunt autem deserunt ipsum molestiae dicta est iusto numquam.
+                    <p className="text-justify text-[12px]" data-aos="fade-left">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ornare sollicitudin urna eget rutrum. Mauris convallis sem at lorem interdum molestie. Nunc tempor porta libero, placerat porttitor ante tempor non. Nullam facilisis ornare diam bibendum tempus. Aenean eu fermentum urna, non interdum mauris. Donec dignissim sodales lectus, vitae semper neque ullamcorper sed. Suspendisse potenti. Vestibulum consequat volutpat nibh, vitae gravida orci auctor sed. Sed vel egestas velit. Donec justo ex, vestibulum nec pulvinar non, ultricies sit amet sem. Nulla et ante ut neque hendrerit vehicula. In lacinia quam vel ante venenatis, a aliquet urna accumsan. Sed condimentum maximus lectus eleifend.
                     </p>
+                    <div className='place-items-center md:place-items-start grid' data-aos="zoom-in">
+                      <button
+                        type="button"
+                        className='btn text-[12px]'
+                        data-twe-ripple-init>
+                        Download CV
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div className=''>
-            <h1 className='text-center fontPrimary md:hidden text-xl font-semibold'>Education</h1>
+            <div className='flex flex-col gap-10'>
+              <h1 className='text-center fontPrimary text-2xl font-semibold' data-aos="fade-down">Education</h1>
+              <div className='flex flex-col justify-center'>
+
+              </div>
             </div>
           </div>
         </section>

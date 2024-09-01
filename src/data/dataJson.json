@@ -3,6 +3,8 @@
         "namaLengkap": "Achmad Hasbil Wafi Rahmawan",
         "nama": "Hasbil",
         "position": "Software Enginnering",
+        "deskripsi": "I am a person who is responsible in carrying out my duties and has high discipline. With an educational background in software engineering, I have an understanding of the programming knowledge needed to develop in the world of IT work.",
+        "deskripsiLorem": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ornare sollicitudin urna eget rutrum. Mauris convallis sem at lorem interdum molestie. Nunc tempor porta libero, placerat porttitor ante tempor non. Nullam facilisis ornare diam bibendum tempus. Aenean eu fermentum urna, non interdum mauris. Donec dignissim sodales lectus, vitae semper neque ullamcorper sed. Suspendisse potenti. Vestibulum consequat volutpat nibh, vitae gravida orci auctor sed. Sed vel egestas velit. Donec justo ex, vestibulum nec pulvinar non, ultricies sit amet sem. Nulla et ante ut neque hendrerit vehicula. In lacinia quam vel ante venenatis, a aliquet urna accumsan. Sed condimentum maximus lectus eleifend.",
         "pendidikan": [
             {
                 "nama": "University of Brawijaya",

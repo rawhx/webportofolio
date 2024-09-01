@@ -4,6 +4,7 @@ import { NavBar } from './components';
 import dataJson from './data/dataJson.json';
 import * as Icons from '@fortawesome/free-brands-svg-icons';
 import { useEffect, useState } from 'react';
+import { faArrowUpFromBracket } from '@fortawesome/free-solid-svg-icons';
 
 function App() {
   const [activeSection, setActiveSection] = useState('home');
@@ -33,6 +34,21 @@ function App() {
     };
   }, []);
 
+  const DownloadCV = () => {
+    const fileUrl = process.env.PUBLIC_URL + '/cv.png';
+
+    fetch(fileUrl).then(response => response.blob()).then(blob => {
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.style.display = 'none';
+        a.href = url;
+        a.download = 'cv_Achmad Hasbil.pdf'; // Set the name of the downloaded file
+        document.body.appendChild(a);
+        a.click();
+        window.URL.revokeObjectURL(url); // Clean up after the download
+      }).catch(() => alert('File download failed'));
+  }
+
   return (
     <div className="App bg-container overflow-hidden">
       <NavBar activeSection={activeSection}/>
@@ -58,9 +74,13 @@ function App() {
             <h1 className='fontPrimary text-2xl'>{dataJson.profil.position}</h1>
             <button
               type="button"
-              className='btn'
-              data-twe-ripple-init>
-              Download CV
+              onClick={DownloadCV}
+              className='btn !flex flex-row gap-3 items-center'
+            >
+              <FontAwesomeIcon icon={faArrowUpFromBracket} />
+              <span>
+                Download CV
+              </span>
             </button>
           </div>
         </section>
@@ -77,14 +97,18 @@ function App() {
                 <div className='w-[80%] pr-[20px] flex flex-col md:justify-center gap-3'>
                   <div>
                     <p className="text-justify text-[12px]" data-aos="fade-left">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ornare sollicitudin urna eget rutrum. Mauris convallis sem at lorem interdum molestie. Nunc tempor porta libero, placerat porttitor ante tempor non. Nullam facilisis ornare diam bibendum tempus. Aenean eu fermentum urna, non interdum mauris. Donec dignissim sodales lectus, vitae semper neque ullamcorper sed. Suspendisse potenti. Vestibulum consequat volutpat nibh, vitae gravida orci auctor sed. Sed vel egestas velit. Donec justo ex, vestibulum nec pulvinar non, ultricies sit amet sem. Nulla et ante ut neque hendrerit vehicula. In lacinia quam vel ante venenatis, a aliquet urna accumsan. Sed condimentum maximus lectus eleifend.
+                      {dataJson.profil.deskripsiLorem}
                     </p>
                     <div className='place-items-center md:place-items-start grid' data-aos="zoom-in">
                       <button
                         type="button"
-                        className='btn text-[12px]'
-                        data-twe-ripple-init>
-                        Download CV
+                        onClick={DownloadCV}
+                        className='btn text-[12px] !flex flex-row gap-3 items-center'
+                      >
+                        <FontAwesomeIcon icon={faArrowUpFromBracket} />
+                        <span>
+                          Download CV
+                        </span>
                       </button>
                     </div>
                   </div>
@@ -98,7 +122,7 @@ function App() {
                   dataJson.profil.pendidikan.map((data, index)=>(
                     <>
                       <div className={`content py-5 px-10 h-fit md:w-[40%] flex flex-col gap-3 ml-[55px] md:ml-0 border-l-2 ${index % 2 ? "md:translate-x-[-50%] md:border-l-0 md:border-r-2" : "md:translate-x-[49.6%]"}`}>
-                        <div className={`w-[15px] h-[15px] rounded-full bg-oliveGreen absolute hidden md:block ${index % 2 ? "md:-right-[0.5rem]" : "md:left-[-0.5rem]"}`}/>
+                        <div className={`w-[15px] h-[15px] rounded-full bg-oliveGreen absolute hidden md:block ${index % 2 ? "md:-right-[0.5rem]" : "md:left-[-0.5rem]"}`} data-aos="zoom-in"/>
                         <div className={`w-[15px] h-[15px] rounded-full bg-oliveGreen absolute left-[3rem] md:hidden`}/>
                         <div className={`${index % 2 ? "md:text-right" : null }`} data-aos={`${index % 2 ? "fade-right" : "fade-left" }`}>
                           <h1 className='font-bold text-[14pt]'>{data.nama}</h1>
@@ -119,7 +143,7 @@ function App() {
                   dataJson.profil.pengalamanKerja.map((data, index)=>(
                     <>
                       <div className={`content py-5 px-10 h-fit md:w-[40%] flex flex-col gap-3 ml-[55px] md:ml-0 border-l-2 ${index % 2 ? "md:translate-x-[-50%] md:border-l-0 md:border-r-2" : "md:translate-x-[49.6%]"}`}>
-                        <div className={`w-[15px] h-[15px] rounded-full bg-oliveGreen absolute hidden md:block ${index % 2 ? "md:-right-[0.5rem]" : "md:left-[-0.5rem]"}`}/>
+                        <div className={`w-[15px] h-[15px] rounded-full bg-oliveGreen absolute hidden md:block ${index % 2 ? "md:-right-[0.5rem]" : "md:left-[-0.5rem]"}`} data-aos="zoom-in"/>
                         <div className={`w-[15px] h-[15px] rounded-full bg-oliveGreen absolute left-[3rem] md:hidden`}/>
                         <div className={`${index % 2 ? "md:text-right" : null }`} data-aos={`${index % 2 ? "fade-right" : "fade-left" }`}>
                           <h1 className='font-bold text-[14pt]'>{data.nama + " ~ " + data.position}</h1>

@@ -5,26 +5,29 @@
         "position": "Software Enginnering",
         "pendidikan": [
             {
-                "nama": "Vocational Hight School 4 Malang",
-                "prodi": "Software Engineering",
-                "periodeAwal": 2021,
-                "periodeAkhir": 2024,
-                "periodeBulanAwal": 0,
-                "periodeBulanAkhir": 0
-            },
-            {
                 "nama": "University of Brawijaya",
                 "prodi": "Information System",
+                "deskripsi": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel luctus ante, a cursus risus. Vestibulum non tincidunt risus, ac vestibulum sapien. Quisque eget turpis mollis, tristique lorem ut, tristique velit. Suspendisse imperdiet magna in sapien interdum vulputate sed vitae erat. Sed consectetur massa non vestibulum volutpat. Cras sollicitudin, nunc.",
                 "periodeAwal": 2024,
                 "periodeAkhir": 2028,
                 "periodeBulanAwal": 8,
                 "periodeBulanAkhir": 8
+            },
+            {
+                "nama": "Vocational Hight School 4 Malang",
+                "prodi": "Software Engineering",
+                "deskripsi": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel luctus ante, a cursus risus. Vestibulum non tincidunt risus, ac vestibulum sapien. Quisque eget turpis mollis, tristique lorem ut, tristique velit. Suspendisse imperdiet magna in sapien interdum vulputate sed vitae erat. Sed consectetur massa non vestibulum volutpat. Cras sollicitudin, nunc.",
+                "periodeAwal": 2021,
+                "periodeAkhir": 2024,
+                "periodeBulanAwal": 6,
+                "periodeBulanAkhir": 5
             }
         ],
         "pengalamanKerja": [
             {
-                "perusahaan": "PT. Sekawan Media",
+                "nama": "PT. Sekawan Media",
                 "position": "Intern Backend Developer",
+                "deskripsi": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel luctus ante, a cursus risus. Vestibulum non tincidunt risus, ac vestibulum sapien. Quisque eget turpis mollis, tristique lorem ut, tristique velit. Suspendisse imperdiet magna in sapien interdum vulputate sed vitae erat. Sed consectetur massa non vestibulum volutpat. Cras sollicitudin, nunc.",
                 "periodeAwal": 2023,
                 "periodeAkhir": 2024,
                 "periodeBulanAwal": 1,

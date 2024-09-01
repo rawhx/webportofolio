@@ -107,3 +107,12 @@
 .animation {
   animation: cover 4.5s infinite ease-in-out;
 }
+
+/* .timeline .content::after {
+  content: "";
+  position: absolute;
+  left: -3%;
+  width: 3px;
+  background: #445D48;
+  height: 100%;
+} */

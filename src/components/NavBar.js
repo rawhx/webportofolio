@@ -46,9 +46,9 @@ const NavBar = ({activeSection}) => {
                         </button>
 
                         <button 
-                            className={`nav-link ${activeSection === "portfolio" ? 'nav-link-active' : ''}`}
-                            onClick={() => scrollToSection('portfolio')}>
-                            Portfolio
+                            className={`nav-link ${activeSection === "contact" ? 'nav-link-active' : ''}`}
+                            onClick={() => scrollToSection('contact')}>
+                            Contact
                         </button>
                     </div>
                     <button onClick={()=>setHamburgerActive(!hamburgerActive)} className="md:hidden">

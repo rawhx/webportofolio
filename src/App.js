@@ -4,11 +4,66 @@ import { NavBar } from './components';
 import dataJson from './data/dataJson.json';
 import * as Icons from '@fortawesome/free-brands-svg-icons';
 import { useEffect, useState } from 'react';
-import { faArrowUpFromBracket } from '@fortawesome/free-solid-svg-icons';
+import { faArrowUpFromBracket, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
+import Swal from 'sweetalert2';
 
 function App() {
-  const [activeSection, setActiveSection] = useState('home');
+  const Toast = Swal.mixin({
+    toast: true,
+    position: "top-end",
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.onmouseenter = Swal.stopTimer;
+      toast.onmouseleave = Swal.resumeTimer;
+    }
+  });
+  
+  const [activeSection, setActiveSection] = useState('home')
+  const [data, setData] = useState({
+    email: '',
+    subject: '',
+    message: ''
+  })
 
+  const handleInput = (e) => {
+    const { name, value } = e.target; 
+    const element = document.getElementById(name)
+    const errorMsgElement = document.getElementById(`error-msg-${name}`);
+
+    if (element.value) {
+      element.classList.remove('error')
+      errorMsgElement.classList.add('hidden')
+    } 
+
+    setData((prev) => ({
+      ...prev,    
+      [name]: value
+    }));
+  };
+
+  const sendMessage = async (e) => {
+    e.preventDefault()
+    const email = document.getElementById('email')
+    const subject = document.getElementById('subject')
+    const message = document.getElementById('message')
+    const fields = { email, subject, message };
+ 
+    for (const key in fields) {
+      if (!fields[key].value) {
+        const errorMsgElement = document.getElementById(`error-msg-${key}`);
+        fields[key].classList.add('error');
+        errorMsgElement.classList.remove('hidden');
+        Toast.fire({
+          icon: "error",
+          title: "Field is required."
+          // title: key
+        });
+      }
+    }
+  }
+   
   const bulanNama = ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Agu', 'Sep', 'Okt', 'Nov', 'Des']
 
   useEffect(() => {
@@ -48,6 +103,18 @@ function App() {
         window.URL.revokeObjectURL(url); // Clean up after the download
       }).catch(() => alert('File download failed'));
   }
+
+  useEffect(()=>{
+    const getTime = () => {
+      const time = document.getElementById('time')
+      const date = new Date()
+      time.innerText = `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`
+    }
+    getTime()
+    const intervalId = setInterval(getTime, 1000);
+
+    return () => clearInterval(intervalId);
+  })
 
   return (
     <div className="App bg-container overflow-hidden">
@@ -160,13 +227,39 @@ function App() {
           </div>
         </section>
         <section id='contact'>
-          <div className='h-screen py-[100px]'>
-            <h1 className='text-center fontPrimary  text-2xl font-semibold' data-aos="fade-down">Contact Me</h1>
+          <div className='h-fit pt-[100px] pb-[20px] flex flex-col gap-5'>
+            <h1 className='text-center fontPrimary  text-2xl font-semibold' data-aos="fade-down">Contact With Me</h1>
+            <div className='w-full h-fit flex justify-center'>
+              <form onSubmit={sendMessage} className='w-full md:w-1/2 p-[50px] rounded-[20px] gap-4 flex flex-col'>
+                <div className='flex flex-col lg:flex-row gap-4'>
+                  <div className="w-full h-fit min-w-[200px]">
+                    <input id="email" name='email' onChange={handleInput} className="w-full bg-white placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-creamyBrown focus:shadow-md" placeholder="Email"/>
+                    <span id='error-msg-email' className='text-[red] text-[11px] hidden'>This field is required.</span>
+                  </div>
+                  <div className="w-full h-fit min-w-[200px]">
+                    <input id="subject" name='subject' onChange={handleInput} className="w-full bg-white placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-creamyBrown focus:shadow-md" placeholder="Subject"/>
+                    <span id='error-msg-subject' className='text-[red] text-[11px] hidden'>This field is required.</span>
+                  </div>
+                </div>
+                <div className="flex flex-col">
+                  <textarea id="message" name='message' onChange={handleInput} className="w-full min-h-[250px] max-h-[250px] bg-white placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-creamyBrown focus:shadow-md" placeholder="Message" >
+                  </textarea>
+                  <span id='error-msg-message' className='text-[red] text-[11px] hidden'>This field is required.</span>
+                </div>
+                <div className="w-full h-fit min-w-[200px]">
+                  <button type='submit' className='btn w-full !rounded-xl hover:!bg-carbonGray [10px] !m-0 !text-white !bg-oliveGreen !gap-3 !flex !flex-row-reverse !justify-center !items-center'>
+                    <FontAwesomeIcon icon={faPaperPlane} />
+                    <span>Send</span>
+                  </button>
+                </div>
+              </form>
+            </div>
           </div>
         </section>
       </div>
-      <footer>
+      <footer className='flex flex-row-reverse justify-between'>
         <h1 className='text-right px-[20px] py-3 text-[12px]'>©{ new Date().getFullYear() } rawhx_x</h1>
+        <h1 id='time' className='px-[20px] py-3 text-[12px]'></h1>
       </footer>
     </div>
   );

@@ -65,7 +65,7 @@ const NavBar = ({activeSection}) => {
                     <button 
                         className={`nav-link ${activeSection === "about" ? 'nav-link-active' : ''}`}
                         onClick={() => scrollToSection('about')}>
-                        About
+                        Journey
                     </button>
 
                     <button 

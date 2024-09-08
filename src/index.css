@@ -29,3 +29,26 @@
     scroll-behavior: smooth;
     font-family: 'Poppins', sans-serif;
 }
+
+@keyframes getar {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(3px);
+    }
+    50% {
+        transform: translateX(-3px);
+    }
+    75% {
+        transform: translateX(3px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.error {
+    border: red 1px solid;
+    animation:getar 0.2s ease-in;
+}

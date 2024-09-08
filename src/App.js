@@ -232,21 +232,21 @@ function App() {
             <div className='w-full h-fit flex justify-center'>
               <form onSubmit={sendMessage} className='w-full md:w-1/2 p-[50px] rounded-[20px] gap-4 flex flex-col'>
                 <div className='flex flex-col lg:flex-row gap-4'>
-                  <div className="w-full h-fit min-w-[200px]">
+                  <div data-aos="fade-right" className="w-full h-fit min-w-[200px]">
                     <input id="email" name='email' onChange={handleInput} className="w-full bg-white placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-creamyBrown focus:shadow-md" placeholder="Email"/>
                     <span id='error-msg-email' className='text-[red] text-[11px] hidden'>This field is required.</span>
                   </div>
-                  <div className="w-full h-fit min-w-[200px]">
+                  <div data-aos="fade-left" className="w-full h-fit min-w-[200px]">
                     <input id="subject" name='subject' onChange={handleInput} className="w-full bg-white placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-creamyBrown focus:shadow-md" placeholder="Subject"/>
                     <span id='error-msg-subject' className='text-[red] text-[11px] hidden'>This field is required.</span>
                   </div>
                 </div>
-                <div className="flex flex-col">
+                <div data-aos="fade-up" className="flex flex-col">
                   <textarea id="message" name='message' onChange={handleInput} className="w-full min-h-[250px] max-h-[250px] bg-white placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-creamyBrown focus:shadow-md" placeholder="Message" >
                   </textarea>
                   <span id='error-msg-message' className='text-[red] text-[11px] hidden'>This field is required.</span>
                 </div>
-                <div className="w-full h-fit min-w-[200px]">
+                <div data-aos="fade-up" className="w-full h-fit min-w-[200px]">
                   <button type='submit' className='btn w-full !rounded-xl hover:!bg-carbonGray [10px] !m-0 !text-white !bg-oliveGreen !gap-3 !flex !flex-row-reverse !justify-center !items-center'>
                     <FontAwesomeIcon icon={faPaperPlane} />
                     <span>Send</span>

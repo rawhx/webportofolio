@@ -230,7 +230,7 @@ function App() {
           <div className='h-fit pt-[100px] pb-[20px] flex flex-col gap-5'>
             <h1 className='text-center fontPrimary  text-2xl font-semibold' data-aos="fade-down">Contact With Me</h1>
             <div className='w-full h-fit flex justify-center'>
-              <form onSubmit={sendMessage} className='w-full md:w-1/2 p-[50px] rounded-[20px] gap-4 flex flex-col'>
+              <form onSubmit={sendMessage} className='w-full md:w-1/2 p-[50px] rounded-[20px] gap-3 flex flex-col'>
                 <div className='flex flex-col lg:flex-row gap-4'>
                   <div data-aos="fade-right" className="w-full h-fit min-w-[200px]">
                     <input id="email" name='email' onChange={handleInput} className="w-full bg-white placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-creamyBrown focus:shadow-md" placeholder="Email"/>
@@ -241,16 +241,18 @@ function App() {
                     <span id='error-msg-subject' className='text-[red] text-[11px] hidden'>This field is required.</span>
                   </div>
                 </div>
-                <div data-aos="fade-up" className="flex flex-col">
-                  <textarea id="message" name='message' onChange={handleInput} className="w-full min-h-[250px] max-h-[250px] bg-white placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-creamyBrown focus:shadow-md" placeholder="Message" >
-                  </textarea>
-                  <span id='error-msg-message' className='text-[red] text-[11px] hidden'>This field is required.</span>
-                </div>
-                <div data-aos="fade-up" className="w-full h-fit min-w-[200px]">
-                  <button type='submit' className='btn w-full !rounded-xl hover:!bg-carbonGray [10px] !m-0 !text-white !bg-oliveGreen !gap-3 !flex !flex-row-reverse !justify-center !items-center'>
-                    <FontAwesomeIcon icon={faPaperPlane} />
-                    <span>Send</span>
-                  </button>
+                <div data-aos="zoom-in" className='flex flex-col gap-4'>
+                  <div className="flex flex-col">
+                    <textarea id="message" name='message' onChange={handleInput} className="w-full min-h-[250px] max-h-[250px] bg-white placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-creamyBrown focus:shadow-md" placeholder="Message" >
+                    </textarea>
+                    <span id='error-msg-message' className='text-[red] text-[11px] hidden'>This field is required.</span>
+                  </div>
+                  <div className="w-full h-fit min-w-[200px]">
+                    <button type='submit' className='btn w-full !rounded-xl hover:!bg-carbonGray [10px] !m-0 !text-white !bg-oliveGreen !gap-3 !flex !flex-row-reverse !justify-center !items-center'>
+                      <FontAwesomeIcon icon={faPaperPlane} />
+                      <span>Send</span>
+                    </button>
+                  </div>
                 </div>
               </form>
             </div>

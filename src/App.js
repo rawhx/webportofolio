@@ -6,6 +6,7 @@ import * as Icons from '@fortawesome/free-brands-svg-icons';
 import { useEffect, useState } from 'react';
 import { faArrowUpFromBracket, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 import Swal from 'sweetalert2';
+import "https://smtpjs.com/v3/smtp.js"
 
 function App() {
   const Toast = Swal.mixin({
@@ -62,6 +63,12 @@ function App() {
         });
       }
     }
+
+    const response = await fetch(`mailto:achmadhasbil24@gmail.com?cc=${data.email}&subject=${data.subject}&body=${data.message}`);
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
   }
    
   const bulanNama = ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Agu', 'Sep', 'Okt', 'Nov', 'Des']
@@ -90,7 +97,7 @@ function App() {
   }, []);
 
   const DownloadCV = () => {
-    const fileUrl = process.env.PUBLIC_URL + '/cv.png';
+    const fileUrl = process.env.PUBLIC_URL + '/cv.pdf';
 
     fetch(fileUrl).then(response => response.blob()).then(blob => {
         const url = window.URL.createObjectURL(blob);

@@ -64,11 +64,12 @@ function App() {
       }
     }
 
-    const response = await fetch(`mailto:achmadhasbil24@gmail.com?cc=${data.email}&subject=${data.subject}&body=${data.message}`);
+    Toast.fire({
+      icon: "info",
+      title: "Can't sen message."
+    });
 
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
+    // window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=achmadhasbil24@gmail.com&su=${data.subject}&body=${data.message}`)
   }
    
   const bulanNama = ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Agu', 'Sep', 'Okt', 'Nov', 'Des']
@@ -171,7 +172,7 @@ function App() {
                 <div className='w-[80%] pr-[20px] flex flex-col md:justify-center gap-3'>
                   <div>
                     <p className="text-justify text-[12px]" data-aos="fade-left">
-                      {dataJson.profil.deskripsiLorem}
+                      {dataJson.profil.deskripsi}
                     </p>
                     <div className='place-items-center md:place-items-start grid' data-aos="zoom-in">
                       <button
@@ -224,7 +225,7 @@ function App() {
                           <h2 className='font-bold text-[12pt]'>{data.periodeAwal + " " + bulanNama[data.periodeBulanAwal - 1] + " - " + (data.periodeAkhir <= new Date().getFullYear() ? data.periodeAkhir + " " + bulanNama[data.periodeBulanAkhir - 1] : 'present') }</h2>
                           {/* <h2 className='font-bold text-[12pt]'>{data.periodeAwal < data.periodeAkhir ? data.periodeAwal + " " + bulanNama[data.periodeBulanAwal] : "Present" }</h2> */}
                         </div>
-                        <p className='text-justify text-[12px]' data-aos={`${index % 2 ? "zoom-in-right" : "zoom-in-left" }`}>{data.deskripsi}</p>
+                        <div className='text-justify text-[12px]' data-aos={`${index % 2 ? "zoom-in-right" : "zoom-in-left" }`} dangerouslySetInnerHTML={{ __html: data.deskripsi }} />
                       </div>
                     </>
                   ))

@@ -4,6 +4,15 @@
   color: #445D48;
 }
 
+ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+li {
+  margin-bottom: 5px;
+}
+
 .hamburger {
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }

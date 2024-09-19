@@ -3,13 +3,13 @@
         "namaLengkap": "Achmad Hasbil Wafi Rahmawan",
         "nama": "Hasbil",
         "position": "Software Enginnering",
-        "deskripsi": "I am a person who is responsible in carrying out my duties and has high discipline. With an educational background in software engineering, I have an understanding of the programming knowledge needed to develop in the world of IT work.",
+        "deskripsi": "I am a Web Developer with experience in designing and developing efficient and intuitive digital solutions. With a strong background in technology, I focus on creating optimal user experiences through modern and responsive approaches. My expertise includes crafting engaging and functional user interfaces, as well as managing projects from concept to implementation. I thrive in collaborative environments, with strong communication skills and a creative problem-solving mindset. Detail-oriented and quality-driven, I always strive to deliver exceptional results that meet client and user needs. I am eager to join a dynamic team where I can continue to grow professionally and contribute to meaningful technological innovations.",
         "deskripsiLorem": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ornare sollicitudin urna eget rutrum. Mauris convallis sem at lorem interdum molestie. Nunc tempor porta libero, placerat porttitor ante tempor non. Nullam facilisis ornare diam bibendum tempus. Aenean eu fermentum urna, non interdum mauris. Donec dignissim sodales lectus, vitae semper neque ullamcorper sed. Suspendisse potenti. Vestibulum consequat volutpat nibh, vitae gravida orci auctor sed. Sed vel egestas velit. Donec justo ex, vestibulum nec pulvinar non, ultricies sit amet sem. Nulla et ante ut neque hendrerit vehicula. In lacinia quam vel ante venenatis, a aliquet urna accumsan. Sed condimentum maximus lectus eleifend.",
         "pendidikan": [
             {
                 "nama": "University of Brawijaya",
                 "prodi": "Information System",
-                "deskripsi": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel luctus ante, a cursus risus. Vestibulum non tincidunt risus, ac vestibulum sapien. Quisque eget turpis mollis, tristique lorem ut, tristique velit. Suspendisse imperdiet magna in sapien interdum vulputate sed vitae erat. Sed consectetur massa non vestibulum volutpat. Cras sollicitudin, nunc.",
+                "deskripsi": "I am currently pursuing my studies at the University of Brawijaya, a leading institution in Indonesia. I am enrolled in the Information Systems program. During this time, I focus on developing both technical and theoretical skills relevant to Software Development, while actively participating in academic activities and projects that broaden my knowledge and experience.",
                 "periodeAwal": 2024,
                 "periodeAkhir": 2028,
                 "periodeBulanAwal": 8,
@@ -18,7 +18,7 @@
             {
                 "nama": "Vocational Hight School 4 Malang",
                 "prodi": "Software Engineering",
-                "deskripsi": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel luctus ante, a cursus risus. Vestibulum non tincidunt risus, ac vestibulum sapien. Quisque eget turpis mollis, tristique lorem ut, tristique velit. Suspendisse imperdiet magna in sapien interdum vulputate sed vitae erat. Sed consectetur massa non vestibulum volutpat. Cras sollicitudin, nunc.",
+                "deskripsi": "During my time in vocational high school, I studied various aspects of software development, from basic programming to software project management. I gained skills in system analysis, design, development, and testing of applications. My education also equipped me with a solid understanding of the software development lifecycle and enhanced my problem-solving abilities. Additionally, I learned the importance of teamwork and proper documentation in every technological project.",
                 "periodeAwal": 2021,
                 "periodeAkhir": 2024,
                 "periodeBulanAwal": 6,
@@ -29,7 +29,7 @@
             {
                 "nama": "PT. Sekawan Media",
                 "position": "Intern Backend Developer",
-                "deskripsi": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis vel luctus ante, a cursus risus. Vestibulum non tincidunt risus, ac vestibulum sapien. Quisque eget turpis mollis, tristique lorem ut, tristique velit. Suspendisse imperdiet magna in sapien interdum vulputate sed vitae erat. Sed consectetur massa non vestibulum volutpat. Cras sollicitudin, nunc.",
+                "deskripsi": "<p>As an Intern Backend Developer, I gained experience working with development teams to build and maintain reliable backend infrastructures. My key responsibilities included:</p> <ul> <li>Developing and managing APIs to ensure smooth communication systems.</li> <li>Working with databases, including design, optimization, and query management to enhance application performance.</li> <li>Performing debugging and testing to identify and resolve bugs.</li> <li>Collaborating with the team to ensure effective integration between systems.</li> <li>Participating in code reviews and adhering to best practices in development.</li> </ul> <p>This experience has given me a solid understanding of backend workflows, as well as the importance of security and scalability in application development.</p>",
                 "periodeAwal": 2023,
                 "periodeAkhir": 2024,
                 "periodeBulanAwal": 1,

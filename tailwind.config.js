@@ -14,7 +14,8 @@ module.exports = {
         almostBlack: '#001524',
         espresso: '#5E3023',
         carbonGray: '#292F36',
-        whiteFog: '#FAF5F1'
+        whiteFog: '#FAF5F1',
+        darkBlue: "#04252c"
       }
     },
   },

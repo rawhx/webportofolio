@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './App.css';
-import { NavBar } from './components';
+import { Card, NavBar } from './components';
 import dataJson from './data/dataJson.json';
 import * as Icons from '@fortawesome/free-brands-svg-icons';
 import { useEffect, useState } from 'react';
@@ -61,12 +61,13 @@ function App() {
           title: "Field is required."
           // title: key
         });
+        return
       }
     }
 
     Toast.fire({
       icon: "info",
-      title: "Can't sen message."
+      title: "Can't send message."
     });
 
     // window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=achmadhasbil24@gmail.com&su=${data.subject}&body=${data.message}`)
@@ -125,7 +126,7 @@ function App() {
   })
 
   return (
-    <div className="App bg-container overflow-hidden">
+    <div className="App bg-container dark-mode overflow-hidden">
       <NavBar activeSection={activeSection}/>
       <div className='flex flex-col gap-5 trans fixed w-fit left-4 items-center top-[50%] bottom-[50%] z-10'>
         {
@@ -166,7 +167,7 @@ function App() {
               <div className='flex flex-col md:flex-row justify-center items-center gap-5'>
                 <div className='w-[60%] flex justify-center items-center' data-aos="fade-right">
                   <div className='animation h-[15rem] w-[15rem] bg-container overflow-hidden'>
-                    <img src={`${process.env.PUBLIC_URL}/me.png`} alt='me' className='object-cover translate-y-[-3rem]' draggable="false"></img>
+                    <img src={`${process.env.PUBLIC_URL}/me.png`} alt='me' className='object-cover translate-y-[-3rem]' draggable="false" />
                   </div>
                 </div>
                 <div className='w-[80%] pr-[20px] flex flex-col md:justify-center gap-3'>
@@ -200,9 +201,9 @@ function App() {
                         <div className={`w-[15px] h-[15px] rounded-full bg-oliveGreen absolute hidden md:block ${index % 2 ? "md:-right-[0.5rem]" : "md:left-[-0.5rem]"}`} data-aos="zoom-in"/>
                         <div className={`w-[15px] h-[15px] rounded-full bg-oliveGreen absolute left-[3rem] md:hidden`}/>
                         <div className={`${index % 2 ? "md:text-right" : null }`} data-aos={`${index % 2 ? "fade-right" : "fade-left" }`}>
-                          <h1 className='font-bold text-[14pt]'>{data.nama}</h1>
-                          <h2 className='font-bold text-[12pt]'>{data.periodeAwal + " " + bulanNama[data.periodeBulanAwal - 1] + " - " + (data.periodeAkhir <= new Date().getFullYear() ? data.periodeAkhir + " " + bulanNama[data.periodeBulanAkhir - 1] : 'present') }</h2>
-                          {/* <h2 className='font-bold text-[12pt]'>{data.periodeAwal < data.periodeAkhir ? data.periodeAwal + " " + bulanNama[data.periodeBulanAwal] : "Present" }</h2> */}
+                          <h1 className='font-bold text-[14pt] text-oliveGreen'>{data.nama}</h1>
+                          <h2 className='font-bold text-[12pt] text-oliveGreen'>{data.periodeAwal + " " + bulanNama[data.periodeBulanAwal - 1] + " - " + (data.periodeAkhir <= new Date().getFullYear() && (data.periodeBulanAkhir - 1) < new Date().getMonth() ? data.periodeAkhir + " " + bulanNama[data.periodeBulanAkhir - 1] : 'present') }</h2>
+                          {/* <h2 className='font-bold text-[12pt] text-oliveGreen'>{data.periodeAwal < data.periodeAkhir ? data.periodeAwal + " " + bulanNama[data.periodeBulanAwal] : "Present" }</h2> */}
                         </div>
                         <p className='text-justify text-[12px]' data-aos={`${index % 2 ? "zoom-in-right" : "zoom-in-left" }`}>{data.deskripsi}</p>
                       </div>
@@ -221,9 +222,9 @@ function App() {
                         <div className={`w-[15px] h-[15px] rounded-full bg-oliveGreen absolute hidden md:block ${index % 2 ? "md:-right-[0.5rem]" : "md:left-[-0.5rem]"}`} data-aos="zoom-in"/>
                         <div className={`w-[15px] h-[15px] rounded-full bg-oliveGreen absolute left-[3rem] md:hidden`}/>
                         <div className={`${index % 2 ? "md:text-right" : null }`} data-aos={`${index % 2 ? "fade-right" : "fade-left" }`}>
-                          <h1 className='font-bold text-[14pt]'>{data.nama + " ~ " + data.position}</h1>
-                          <h2 className='font-bold text-[12pt]'>{data.periodeAwal + " " + bulanNama[data.periodeBulanAwal - 1] + " - " + (data.periodeAkhir <= new Date().getFullYear() ? data.periodeAkhir + " " + bulanNama[data.periodeBulanAkhir - 1] : 'present') }</h2>
-                          {/* <h2 className='font-bold text-[12pt]'>{data.periodeAwal < data.periodeAkhir ? data.periodeAwal + " " + bulanNama[data.periodeBulanAwal] : "Present" }</h2> */}
+                          <h1 className='font-bold text-[14pt] text-oliveGreen'>{data.nama + " ~ " + data.position}</h1>
+                          <h2 className='font-bold text-[12pt] text-oliveGreen'>{data.periodeAwal + " " + bulanNama[data.periodeBulanAwal - 1] + " - " + (data.periodeAkhir <= new Date().getFullYear() && (data.periodeBulanAkhir - 1) < new Date().getMonth() ? data.periodeAkhir + " " + bulanNama[data.periodeBulanAkhir - 1] : 'present') }</h2>
+                          {/* <h2 className='font-bold text-[12pt] text-oliveGreen'>{data.periodeAwal < data.periodeAkhir ? data.periodeAwal + " " + bulanNama[data.periodeBulanAwal] : "Present" }</h2> */}
                         </div>
                         <div className='text-justify text-[12px]' data-aos={`${index % 2 ? "zoom-in-right" : "zoom-in-left" }`} dangerouslySetInnerHTML={{ __html: data.deskripsi }} />
                       </div>
@@ -232,6 +233,12 @@ function App() {
                 }
               </div>
             </div>
+            {/* <div id='portofolio' className='flex flex-col gap-10'>
+              <h1 className='text-center fontPrimary text-2xl font-semibold' data-aos="fade-down">Portofolio</h1>
+              <div className='h-fit w-full timeline flex flex-col items-center'>
+                <Card />
+              </div>
+            </div> */}
           </div>
         </section>
         <section id='contact'>

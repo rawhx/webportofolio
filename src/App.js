@@ -128,7 +128,7 @@ function App() {
   return (
     <div className="App bg-container dark-mode overflow-hidden">
       <NavBar activeSection={activeSection}/>
-      <div className='flex flex-col gap-5 trans fixed w-fit left-4 items-center top-[50%] bottom-[50%] z-10'>
+      <div className='flex flex-col gap-5 trans fixed w-fit left-4 items-center top-[50%] bottom-[50%] z-50'>
         {
           dataJson.sosialMedia.map(data => (
             <>

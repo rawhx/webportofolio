@@ -27,6 +27,15 @@
         ],
         "pengalamanKerja": [
             {
+                "nama": "KBMDSI PIT",
+                "position": "Junior Staff Backend",
+                "deskripsi": "<p>As a junior staff member in the PIT department of KBMDSI, I gained invaluable experience in deepening my understanding of website development, database concepts, and object-oriented programming (OOP). Through this role, I had the opportunity to collaborate with a team, solve technical challenges, and enhance my problem-solving skills while working on real-world projects. This experience has significantly broadened my technical knowledge and sharpened my ability to think critically and innovate.</p>",
+                "periodeAwal": 2024,
+                "periodeAkhir": 2024,
+                "periodeBulanAwal": 10,
+                "periodeBulanAkhir": 12
+            },
+            {
                 "nama": "PT. Sekawan Media",
                 "position": "Intern Backend Developer",
                 "deskripsi": "<p>As an Intern Backend Developer, I gained experience working with development teams to build and maintain reliable backend infrastructures. My key responsibilities included:</p> <ul> <li>Developing and managing APIs to ensure smooth communication systems.</li> <li>Working with databases, including design, optimization, and query management to enhance application performance.</li> <li>Performing debugging and testing to identify and resolve bugs.</li> <li>Collaborating with the team to ensure effective integration between systems.</li> <li>Participating in code reviews and adhering to best practices in development.</li> </ul> <p>This experience has given me a solid understanding of backend workflows, as well as the importance of security and scalability in application development.</p>",

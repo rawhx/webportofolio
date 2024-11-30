@@ -24,56 +24,59 @@ const NavBar = ({activeSection}) => {
     
     return (
         <>
-            <div id="navbar" className="px-5 h-min-12 fixed z-40 w-full backdrop-blur flex-none transition-colors duration-500 lg:z-50 lg:border-b lg:border-slate-900/10 dark:border-slate-50/[0.06] supports-backdrop-blur:bg-white/100 dark:bg-transparent">
-                <div className="flex flex-row justify-between items-center py-3">
-                    <div>
-                        <button onClick={() => window.location.reload()} className="flex flex-row items-center gap-2">
-                            <img src={`${process.env.PUBLIC_URL}/carakter.png`} alt="logo" className="rounded h-9"/>
-                            <h6 className="font-bold">RawhWeb</h6>
-                        </button>
+            <div className="h-screen fixed z-40 w-full"  onClick={hamburgerActive ? () => setHamburgerActive(!hamburgerActive) : undefined}>
+                <div id="navbar" className="px-5 h-min-12 fixed z-40 w-full backdrop-blur flex-none transition-colors duration-500 lg:z-50 lg:border-b lg:border-slate-900/10 dark:border-slate-50/[0.06] supports-backdrop-blur:bg-white/100 dark:bg-transparent">
+                    <div className="flex flex-row justify-between items-center py-3">
+                        <div>
+                            <button onClick={() => window.location.reload()} className="flex flex-row items-center gap-2">
+                                <img src={`${process.env.PUBLIC_URL}/carakter.png`} alt="logo" className="rounded h-9"/>
+                                <h6 className="font-bold">RawhWeb</h6>
+                            </button>
+                        </div>
+                        <div className="hidden md:flex flex-row gap-5">
+                            <button 
+                                className={`nav-link ${activeSection === "home" ? 'nav-link-active' : ''}`}
+                                onClick={() => scrollToSection('home')}>
+                                Home
+                            </button>
+
+                            <button 
+                                className={`nav-link ${activeSection === "about" ? 'nav-link-active' : ''}`}
+                                onClick={() => scrollToSection('about')}>
+                                Journey
+                            </button>
+
+                            <button 
+                                className={`nav-link ${activeSection === "contact" ? 'nav-link-active' : ''}`}
+                                onClick={() => scrollToSection('contact')}>
+                                Contact
+                            </button>
+                        </div>
+                        <button onClick={()=>setHamburgerActive(!hamburgerActive)} className="md:hidden">
+                            <FontAwesomeIcon icon={hamburgerActive ? faXmark : faBars}  className={`hamburger transform ${hamburgerActive ? 'rotate-90' : 'rotate-0'}`}  size="xl" />
+                        </button>        
                     </div>
-                    <div className="hidden md:flex flex-row gap-5">
-                        <button 
-                            className={`nav-link ${activeSection === "home" ? 'nav-link-active' : ''}`}
-                            onClick={() => scrollToSection('home')}>
-                            Home
-                        </button>
+                
+                        <div className={`${hamburgerActive ? 'menu-open' : 'menu-closed'} flex flex-col gap-5 justify-center items-center py-3 transition-all duration-500 ease-in-out`}>
+                            <button 
+                                className={`nav-link ${activeSection === "home" ? 'nav-link-active' : ''}`}
+                                onClick={() => scrollToSection('home')}>
+                                Home
+                            </button>
 
-                        <button 
-                            className={`nav-link ${activeSection === "about" ? 'nav-link-active' : ''}`}
-                            onClick={() => scrollToSection('about')}>
-                            Journey
-                        </button>
+                            <button 
+                                className={`nav-link ${activeSection === "about" ? 'nav-link-active' : ''}`}
+                                onClick={() => scrollToSection('about')}>
+                                Journey
+                            </button>
 
-                        <button 
-                            className={`nav-link ${activeSection === "contact" ? 'nav-link-active' : ''}`}
-                            onClick={() => scrollToSection('contact')}>
-                            Contact
-                        </button>
-                    </div>
-                    <button onClick={()=>setHamburgerActive(!hamburgerActive)} className="md:hidden">
-                        <FontAwesomeIcon icon={hamburgerActive ? faXmark : faBars}  className={`hamburger transform ${hamburgerActive ? 'rotate-90' : 'rotate-0'}`}  size="xl" />
-                    </button>        
-                </div>
-                <div className={`${hamburgerActive ? 'menu-open' : 'menu-closed'} flex flex-col gap-5 justify-center items-center py-3 transition-all duration-500 ease-in-out`}>
-                    <button 
-                        className={`nav-link ${activeSection === "home" ? 'nav-link-active' : ''}`}
-                        onClick={() => scrollToSection('home')}>
-                        Home
-                    </button>
-
-                    <button 
-                        className={`nav-link ${activeSection === "about" ? 'nav-link-active' : ''}`}
-                        onClick={() => scrollToSection('about')}>
-                        Journey
-                    </button>
-
-                    <button 
-                        className={`nav-link ${activeSection === "contact" ? 'nav-link-active' : ''}`}
-                        onClick={() => scrollToSection('contact')}>
-                        Contact
-                    </button>
-                </div>
+                            <button 
+                                className={`nav-link ${activeSection === "contact" ? 'nav-link-active' : ''}`}
+                                onClick={() => scrollToSection('contact')}>
+                                Contact
+                            </button>
+                        </div>
+                </div>      
             </div>
         </>
     )

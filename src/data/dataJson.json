@@ -100,5 +100,19 @@
             "link": "https://instagram.com/achmad.hasbil",
             "icon": "faInstagram"
         }
-    ]
+    ],
+    "CV" : {
+        "online": {
+            "version": {
+                "indo": null,
+                "england": "https://drive.google.com/file/d/197b_u7t0ipvVdbk4PiSdf0pqNaLEpE8j/view?usp=sharing"
+            }
+        },
+        "offline": {
+            "version": {
+                "indo": null,
+                "england": "/cv.pdf"
+            }
+        }
+    }
 }

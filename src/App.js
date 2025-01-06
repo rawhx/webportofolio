@@ -4,7 +4,7 @@ import { Card, NavBar } from './components';
 import dataJson from './data/dataJson.json';
 import * as Icons from '@fortawesome/free-brands-svg-icons';
 import { useContext, useEffect, useState } from 'react';
-import { faArrowUpFromBracket, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
+import { faArrowUpFromBracket, faFile, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 import Swal from 'sweetalert2';
 import "https://smtpjs.com/v3/smtp.js"
 import { GlobalContext } from './global/context';
@@ -100,19 +100,23 @@ function App() {
     };
   }, []);
 
-  const DownloadCV = () => {
-    const fileUrl = process.env.PUBLIC_URL + '/cv.pdf';
-
-    fetch(fileUrl).then(response => response.blob()).then(blob => {
-        const url = window.URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.style.display = 'none';
-        a.href = url;
-        a.download = 'cv_Achmad Hasbil.pdf'; // Set the name of the downloaded file
-        document.body.appendChild(a);
-        a.click();
-        window.URL.revokeObjectURL(url); // Clean up after the download
-      }).catch(() => alert('File download failed'));
+  const ActiontoCV = (type = "online") => {
+    if(type != "online") {
+      const fileUrl = process.env.PUBLIC_URL + dataJson.CV.offline.version.england;
+  
+      fetch(fileUrl).then(response => response.blob()).then(blob => {
+          const url = window.URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.style.display = 'none';
+          a.href = url;
+          a.download = 'cv_Achmad Hasbil.pdf'; // Set the name of the downloaded file
+          document.body.appendChild(a);
+          a.click();
+          window.URL.revokeObjectURL(url); // Clean up after the download
+        }).catch(() => alert('File download failed'));
+    } else {
+      window.open(dataJson.CV.online.version.england, "_blank")
+    }
   }
 
   const isPresent = (periodeAkhir, periodeBulanAkhir) => {
@@ -163,12 +167,12 @@ function App() {
               <h1 className='fontPrimary text-2xl'>{dataJson.profil.position}</h1>
               <button
                 type="button"
-                onClick={DownloadCV}
+                onClick={()=>ActiontoCV("online")}
                 className='btn !flex flex-row gap-3 items-center'
               >
-                <FontAwesomeIcon icon={faArrowUpFromBracket} />
+                <FontAwesomeIcon icon={faFile} />
                 <span>
-                  Download CV
+                  Show CV
                 </span>
               </button>
             </div>
@@ -191,12 +195,12 @@ function App() {
                       <div className='place-items-center md:place-items-start grid' data-aos="zoom-in">
                         <button
                           type="button"
-                          onClick={DownloadCV}
+                          onClick={()=>ActiontoCV("online")}
                           className='btn text-[12px] !flex flex-row gap-3 items-center'
                         >
-                          <FontAwesomeIcon icon={faArrowUpFromBracket} />
+                          <FontAwesomeIcon icon={faFile} />
                           <span>
-                            Download CV
+                            Show CV
                           </span>
                         </button>
                       </div>
